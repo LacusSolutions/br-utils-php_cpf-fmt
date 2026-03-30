@@ -26,6 +26,16 @@
   },
   "homepage": "https://cpf-utils.vercel.app/",
   "scripts": {
+    "lint": [
+      "@lint:format",
+      "@lint:check"
+    ],
+    "lint:ci": [
+      "@lint:format --dry-run --diff",
+      "@lint:check --no-progress"
+    ],
+    "lint:format": "php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php",
+    "lint:check": "phpstan analyse --configuration=.phpstan.neon",
     "test": "phpunit",
     "test:watch": "phpunit-watcher watch",
     "test-coverage": "phpunit --coverage-html coverage"
@@ -37,6 +47,8 @@
     "php": ">=8.1"
   },
   "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.94",
+    "phpstan/phpstan": "^2.1",
     "phpunit/phpunit": "^10.5",
     "spatie/phpunit-watcher": "~1.24"
   },

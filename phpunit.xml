@@ -28,6 +28,6 @@
     <env name="APP_ENV" value="testing"/>
   </php>
   <logging>
-    <junit outputFile=".phpunit.cache/test-results.xml"/>
+    <junit outputFile="vendor/.phpunit.cache/test-results.xml"/>
   </logging>
 </phpunit>
