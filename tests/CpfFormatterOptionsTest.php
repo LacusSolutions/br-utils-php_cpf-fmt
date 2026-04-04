@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lacus\CpfFmt\Tests;
 
+use Exception;
 use InvalidArgumentException;
 use Lacus\CpfFmt\CpfFormatterOptions;
 use PHPUnit\Framework\TestCase;
@@ -288,7 +289,7 @@ class CpfFormatterOptionsTest extends TestCase
         $options = new CpfFormatterOptions();
         $callback = $options->getOnFail();
 
-        $result = $callback('test input');
+        $result = $callback('test input', new Exception('test error'));
 
         $this->assertEquals('test input', $result);
     }
