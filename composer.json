@@ -34,8 +34,8 @@
       "@lint:format --dry-run --diff",
       "@lint:check --no-progress"
     ],
-    "lint:format": "php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php",
-    "lint:check": "phpstan analyse --configuration=.phpstan.neon",
+    "lint:format": "php-cs-fixer fix --config=.php-cs-fixer.config.php",
+    "lint:check": "phpstan analyse --configuration=.php-stan.config.neon",
     "test": "phpunit",
     "test:watch": "phpunit-watcher watch",
     "test-coverage": "phpunit --coverage-html coverage"
